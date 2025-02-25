@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 // Clave secreta (guárdala en .env)
-const SECRET_KEY = process.env.JWT_SECRET || '1234';
+const SECRET_KEY = process.env.JWT_SECRET || 'admin';
 
 
 
@@ -14,7 +14,7 @@ const generateToken = async (req, res) => {
             return res.json({ error: 'Usuario no encontrado' });
         }
 
-        if (req.body.password !== "1234") {
+        if (req.body.password !== "admin") {
             return res.json({ error: 'Contraseña incorrecta' });
         }
 
